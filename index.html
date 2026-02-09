@@ -5,188 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>科普演示导航</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --primary-color: #3b82f6;
-            --secondary-color: #1e293b;
-            --bg-color: #0f172a;
-            --card-bg: rgba(30, 41, 59, 0.7);
-            --text-color: #e2e8f0;
-            --text-muted: #94a3b8;
-            --border-color: #334155;
-            --hover-color: #38bdf8;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            min-height: 100vh;
-            background-image: radial-gradient(circle at 10% 20%, rgba(28, 58, 173, 0.1) 0%, transparent 20%),
-                              radial-gradient(circle at 90% 80%, rgba(124, 58, 237, 0.1) 0%, transparent 20%);
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-        
-        header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-        
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            background: linear-gradient(90deg, #60a5fa, #a78bfa);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        
-        .subtitle {
-            color: var(--text-muted);
-            font-size: 1.1rem;
-        }
-        
-        .search-container {
-            max-width: 600px;
-            margin: 30px auto;
-            position: relative;
-        }
-        
-        .search-input {
-            width: 100%;
-            padding: 15px 25px;
-            padding-left: 50px;
-            background: var(--secondary-color);
-            border: 1px solid var(--border-color);
-            border-radius: 30px;
-            color: white;
-            font-size: 1rem;
-            outline: none;
-            transition: all 0.3s ease;
-        }
-        
-        .search-input:focus {
-            border-color: var(--primary-color);
-            box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
-        }
-        
-        .search-icon {
-            position: absolute;
-            left: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: var(--text-muted);
-        }
-        
-        .category-section {
-            margin-bottom: 40px;
-            animation: fadeIn 0.5s ease;
-        }
-        
-        .category-title {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid var(--border-color);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: var(--hover-color);
-        }
-        
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
-        }
-        
-        .card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 20px;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            text-decoration: none;
-            color: inherit;
-            display: flex;
-            flex-direction: column;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: var(--primary-color);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-        
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 4px;
-            height: 100%;
-            background: linear-gradient(to bottom, var(--primary-color), #8b5cf6);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        
-        .card:hover::before {
-            opacity: 1;
-        }
-        
-        .card-icon {
-            font-size: 2rem;
-            margin-bottom: 15px;
-            color: var(--primary-color);
-        }
-        
-        .card-title {
-            font-size: 1.2rem;
-            font-weight: bold;
-            margin-bottom: 10px;
-            color: #fff;
-        }
-        
-        .card-meta {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-top: auto;
-            display: flex;
-            justify-content: space-between;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .empty-state {
-            text-align: center;
-            padding: 50px;
-            color: var(--text-muted);
-        }
-        
-        footer {
-            text-align: center;
-            margin-top: 60px;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
@@ -205,13 +24,13 @@
         </div>
         
         <footer>
-            <p>上次更新: 2026-02-09 08:00</p>
+            <p>上次更新: 2026-02-09 08:16</p>
         </footer>
     </div>
 
     <script>
         // 数据源
-        const categories = {"AI": [{"name": "卷积神经网络层运作原理", "path": "AI/卷积神经网络层运作原理.html", "mtime": "2026-02-09 07:54", "size": "40.2 KB"}], "Algorithm": [{"name": "排序算法可视化", "path": "Algorithm/排序算法可视化.html", "mtime": "2026-02-09 07:59", "size": "0.1 KB"}]};
+        const categories = {"AI": [{"name": "卷积神经网络层运作原理", "path": "AI/卷积神经网络层运作原理.html", "mtime": "2026-02-09 08:15", "size": "30.5 KB"}], "Algorithm": [{"name": "排序算法可视化", "path": "Algorithm/排序算法可视化.html", "mtime": "2026-02-09 07:59", "size": "0.1 KB"}]};
         
         // 图标映射
         const iconMap = {
